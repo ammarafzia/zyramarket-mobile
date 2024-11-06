@@ -25,31 +25,30 @@ ________________________________________________________________________________
 
 **2. Sebutkan widget apa saja yang kamu gunakan pada proyek ini dan jelaskan fungsinya ?**
 
-Scaffold: Struktur dasar untuk aplikasi, termasuk AppBar dan body.
-AppBar: Bilah atas yang menampilkan judul aplikasi.
-Padding: Memberikan ruang di sekitar widget.
-Column: Mengatur widget secara vertikal.
-Row: Mengatur widget secara horizontal.
-InfoCard: Widget khusus untuk menampilkan informasi (NPM, Nama, Kelas) dalam kartu.
-SizedBox: Memberikan ruang kosong antar widget.
-Center: Memposisikan widget di tengah.
-Text: Menampilkan teks.
-GridView.count: Menampilkan widget dalam format grid.
-ItemCard: Widget khusus untuk menampilkan item dalam grid dengan interaksi.
-Card: Memberikan efek elevasi pada widget.
-Container: Mengatur padding, margin, dan dekorasi.
-InkWell: Menambahkan efek sentuh responsif pada widget.
-SnackBar: Menampilkan pesan singkat kepada pengguna.
-Icon: Menampilkan ikon sesuai data.
+- Scaffold: Struktur dasar untuk aplikasi, termasuk AppBar dan body.
+- AppBar: untuk menampilkan judul aplikasi.
+- Padding: Memberikan ruang pada sekitar widget.
+- Column: Mengatur widget secara vertikal per kolom .
+- Row: Mengatur widget secara horizontal per baris.
+- InfoCard: Widget khusus untuk menampilkan informasi (NPM, Nama, Kelas) dalam kartu.
+- SizedBox: Memberikan ruang kosong antar widget.
+- Center: Memposisikan widget di tengah.
+- Text: Menampilkan teks.
+- GridView.count: Menampilkan widget dalam format grid.
+- ItemCard: Widget khusus untuk menampilkan item dalam grid dengan interaksi.
+- Card: Memberikan efek seperti shadow pada widget.
+- Container: Mengatur padding, margin, dan dekorasi.
+- SnackBar: Menampilkan pesan singkat kepada pengguna.
+- Icon: Menampilkan ikon sesuai data.
 
 
 **3. Apa fungsi dari setState()? Jelaskan variabel apa saja yang dapat terdampak dengan fungsi tersebut ?**
 
-set State() berfungsi untuk memperbarui UI agar mencerminkan perubahan pada data atau state dari sebuah widget. Ketika state atau data suatu widget mengalami perubahan, setState() digunakan untuk memberi tahu framework bahwa tampilan widget tersebut perlu dirender ulang. Tanpa setState(), perubahan data tidak akan terlihat pada UI karena Flutter tidak akan secara otomatis merender ulang tampilan berdasarkan perubahan di variabel.
+**set State()** berfungsi untuk memperbarui UI agar mencerminkan perubahan pada data atau state dari sebuah widget. Ketika state atau data suatu widget mengalami perubahan, setState() digunakan untuk memberi tahu framework bahwa tampilan widget tersebut perlu dirender ulang. Tanpa setState(), perubahan data tidak akan terlihat pada UI karena Flutter tidak akan secara otomatis merender ulang tampilan berdasarkan perubahan di variabel.
 
 **4. Jelaskan perbedaan antara const dengan final ?**
 
-Const berfungsi untuk menetapkan nilai pada waktu kompilasi, sehingga nilai harus sudah diketahui sebelumnya dan tetap sepanjang waktu, biasanya untuk nilai seperti angka atau string . Sedangkan final berfungsi untuk menetapkan nilai pada waktu eksekusi, jadi memungkinkan nilainya sudah yang ditentukan pada saat program dijalankan, tetapi tidak bisa dirubah setelahnya, lebih digunakan untuk data. Pada Dart, const dan final digunakan untuk variabel yang nilainya tidak dapat diubah setelah ditetapkan, hanya berbeda pada waktu penentuan nilainya.
+**Const** berfungsi untuk menetapkan nilai pada waktu kompilasi, sehingga nilai harus sudah diketahui sebelumnya dan tetap sepanjang waktu, biasanya untuk nilai seperti angka atau string . Sedangkan **final** berfungsi untuk menetapkan nilai pada waktu eksekusi, jadi memungkinkan nilainya sudah yang ditentukan pada saat program dijalankan, tetapi tidak bisa dirubah setelahnya, lebih digunakan untuk data. Pada Dart, const dan final digunakan untuk variabel yang nilainya tidak dapat diubah setelah ditetapkan, hanya berbeda pada waktu penentuan nilainya.
 
 
 **5. Jelaskan bagaimana cara kamu mengimplementasikan checklist-checklist di atas ?**
@@ -57,9 +56,9 @@ Const berfungsi untuk menetapkan nilai pada waktu kompilasi, sehingga nilai haru
 **1. Membuat Proyek Baru:**
 
 - Buat proyek baru bernama zyramarket dengan perintah flutter create zyramarket.
-- Masuk ke direktori proyek dengan cd zyramarket.
-- Jalankan proyek pertama kali dengan flutter run,  atau bisa menggunakan  Google Chrome setelah mengaktifkan dukungan web dengan flutter config --enable-web.
-- Jalankan proyek tersebut di aplikasi Google Chrome dengan perintah: flutter run -d chrome
+- Masuk ke direktori proyek dengan **cd zyramarket**.
+- Jalankan proyek pertama kali dengan **flutter run**,  atau bisa menggunakan  Google Chrome setelah mengaktifkan dukungan web dengan **flutter config --enable-web.**
+- Jalankan proyek tersebut di aplikasi Google Chrome dengan perintah: **flutter run -d chrome**
 
 **2. Menambahkan File menu.dart**
 
