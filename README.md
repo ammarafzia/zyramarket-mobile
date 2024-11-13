@@ -102,31 +102,53 @@ Berikut contoh  implementasi dari column dan row dari kode yang sudah saya buat:
  **Row** 
  
 Row(
+
   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+  
   children: [
+  
     InfoCard(title: 'NPM', content: npm, color: Colors.blueAccent.shade100),
+    
     InfoCard(title: 'Name', content: name, color: Colors.blueAccent.shade100),
+    
     InfoCard(title: 'Class', content: className, color: Colors.blueAccent.shade100),
+    
   ],
+  
 ),
 
 **Column** 
 
 child: Column(
+
   crossAxisAlignment: CrossAxisAlignment.center,
+  
   children: [
+  
     // Row untuk menampilkan 3 InfoCard
+    
     Row(...),
+    
     const SizedBox(height: 16.0),
+    
     Center(
+    
       child: Column(
+      
         children: [
+	
           const Padding(...),
+	  
           GridView.count(...),
+	  
         ],
+	
       ),
+      
     ),
+    
   ],
+  
 ),
 
 
@@ -153,11 +175,11 @@ Untuk mengatur theme bisa menggunakan Themdata dalam aplikasi, dapat mendefinisi
 
 **5. Bagaimana cara kamu menangani navigasi dalam aplikasi dengan banyak halaman pada Flutter?**
 
-- Navigator.push(): Digunakan untuk menambahkan halaman baru ke stack navigasi, sehingga halaman saat ini tetap ada di belakang halaman yang baru.
+- **Navigator.push():** Digunakan untuk menambahkan halaman baru ke stack navigasi, sehingga halaman saat ini tetap ada di belakang halaman yang baru.
   jadi , navigator akan membuka HalamanTujuan dan menambahkannya ke stack navigasi.
-- Navigator.pop(): Digunakan untuk menutup halaman saat ini dan kembali ke halaman sebelumnya dalam stack navigasi. Jadi, navigator akan menghapus halaman saat ini dari
+- **Navigator.pop():** Digunakan untuk menutup halaman saat ini dan kembali ke halaman sebelumnya dalam stack navigasi. Jadi, navigator akan menghapus halaman saat ini dari
   stack dan kembali ke halaman sebelumnya.
-- Navigator.pushReplacement(): Digunakan untuk menggantikan halaman saat ini dengan halaman baru. Halaman saat ini akan dihapus dari stack dan digantikan dengan halaman baru. Jadi, Halaman saat ini akan digantikan dengan HalamanTujuan, dan halaman baru akan menjadi halaman teratas di stack.
+- **Navigator.pushReplacement():** Digunakan untuk menggantikan halaman saat ini dengan halaman baru. Halaman saat ini akan dihapus dari stack dan digantikan dengan halaman baru. Jadi, Halaman saat ini akan digantikan dengan HalamanTujuan, dan halaman baru akan menjadi halaman teratas di stack.
 
 
 
