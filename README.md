@@ -1,22 +1,3 @@
-# zyramarket
-
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-
-______________________________________________________________________________________________
-
 # TUGAS 7
 
 **1. Jelaskan apa yang dimaksud dengan stateless widget dan stateful widget, dan jelaskan perbedaan dari keduanya ?**
@@ -92,4 +73,113 @@ onTap: () {
               SnackBar(content: Text("Kamu telah menekan tombol ${item.name}!"))
             );
         },
+
+__________________________________________________________________________________________________________
+
+# TUGAS 8
+
+**1. Apa kegunaan const di Flutter? Jelaskan apa keuntungan ketika menggunakan const pada kode Flutter. Kapan sebaiknya kita menggunakan const, dan kapan sebaiknya tidak digunakan?**
+
+const yang berarti object yang bersifat tetap atau “Konstan” dan  digunakan untuk menandakan bahwa sebuah objek atau widget tidak akan berubah setelah dibuat. Saat kita menandai widget dengan const, Flutter hanya akan membuat satu copy-an objek tersebut dan akan menggunakannya berulang kali. Misalnya, jika kita menggunakan widget yang sama di beberapa tempat, Flutter tidak perlu membuat ulang widget tersebut setiap kali.
+
+- Keuntungan utama dari menggunakan const : 
+  -  Aplikasi menjadi lebih efisien, karena tidak ada pembuatan objek baru yang tidak perlu.
+  -  Widget yang bersifat const juga tidak akan diperbarui ulang setiap kali tampilan berubah, yang membantu meningkatkan kinerja aplikasi. Namun, kita tidak menggunakan
+  -  const untuk widget yang nilainya berubah-ubah, sebaiknya menggunakan const pada widget yang nilainya tetap dan tidak berubah, seperti teks atau gambar statis.
+
+- Kapan sebaiknya menggunakan const?
+  - Jika widget yang nilainya tetap dan tidak berubah, contohnya Text, Icon, atau Padding yang tetap.
+  - Jangan menggunakan const ketika Nilai variabel berubah seiring waktu.
+
+**2. Jelaskan dan bandingkan penggunaan Column dan Row pada Flutter. Berikan contoh implementasi dari masing-masing layout widget ini!**
+
+Column dan Row adalah dua widget yang digunakan untuk mengatur layout atau tata letak elemen-elemen di dalam aplikasi. Keduanya flex widget yang berfungsi  untuk menyusun elemen widget secara vertikal atau horizontal.
+
+**Column** digunakan untuk mengatur tata letak elemen-elemen seperti teks, tombol, gambar, dan lainnya dalam satu kolom vertikal. Sedangkan **Row** digunakan untuk  menampilkan elemen-elemen yang perlu sejajar dalam satu baris, seperti tombol yang ditempatkan berdampingan atau ikon yang saling berdekatan.
+
+Berikut contoh  implementasi dari column dan row dari kode yang sudah saya buat:
+
+ **Row** 
+ 
+Row(
+
+  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+  
+  children: [
+  
+    InfoCard(title: 'NPM', content: npm, color: Colors.blueAccent.shade100),
+    
+    InfoCard(title: 'Name', content: name, color: Colors.blueAccent.shade100),
+    
+    InfoCard(title: 'Class', content: className, color: Colors.blueAccent.shade100),
+    
+  ],
+  
+),
+
+**Column** 
+
+child: Column(
+
+  crossAxisAlignment: CrossAxisAlignment.center,
+  
+  children: [
+  
+    // Row untuk menampilkan 3 InfoCard
+    
+    Row(...),
+    
+    const SizedBox(height: 16.0),
+    
+    Center(
+    
+      child: Column(
+      
+        children: [
+	
+          const Padding(...),
+	  
+          GridView.count(...),
+	  
+        ],
+	
+      ),
+      
+    ),
+    
+  ],
+  
+),
+
+
+**3. Sebutkan apa saja elemen input yang kamu gunakan pada halaman form yang kamu buat pada tugas kali ini. Apakah terdapat elemen input Flutter lain yang tidak kamu gunakan pada tugas ini? Jelaskan!**
+
+- TextFormField:
+  - Nama Produk: Input teks untuk nama produk dengan validasi.
+  - Deskripsi Produk: Input teks untuk deskripsi produk dengan validasi.
+  - Harga Produk: Input teks untuk harga produk dengan validasi agar berupa angka.
+  - Stok Produk: Input teks untuk stok produk dengan validasi agar berupa angka.
+    
+- ElevatedButton:
+  - Tombol yang digunakan untuk mengirim atau menyimpan data yang diinput ke dalam form setelah divalidasi.
+
+Yang tidak gunakan:
+- DropdownButton, Tidak digunakan karena form hanya membutuhkan input teks (nama, deskripsi) dan angka (harga, stok), tanpa opsi terbatas
+- Slider: Tidak digunakan karena tidak diperlukan input yang bentuknya range.
+
+	
+
+**4. Bagaimana cara kamu mengatur tema (theme) dalam aplikasi Flutter agar aplikasi yang dibuat konsisten? Apakah kamu mengimplementasikan tema pada aplikasi yang kamu buat?**
+
+Untuk mengatur theme bisa menggunakan Themdata dalam aplikasi, dapat mendefinisikan elemen elemen tema seperti warna utama, warna sekunder, font, gaya di dalam MaterialApp. Theme.of(context) untuk mengakses tema yang sudah di buat untuk mengimplementasikan tema pada aplikasi (main.dart) dan saya juga sudah mengimplementasikan melalui main.dart
+
+**5. Bagaimana cara kamu menangani navigasi dalam aplikasi dengan banyak halaman pada Flutter?**
+
+- **Navigator.push():** Digunakan untuk menambahkan halaman baru ke stack navigasi, sehingga halaman saat ini tetap ada di belakang halaman yang baru.
+  jadi , navigator akan membuka HalamanTujuan dan menambahkannya ke stack navigasi.
+- **Navigator.pop():** Digunakan untuk menutup halaman saat ini dan kembali ke halaman sebelumnya dalam stack navigasi. Jadi, navigator akan menghapus halaman saat ini dari
+  stack dan kembali ke halaman sebelumnya.
+- **Navigator.pushReplacement():** Digunakan untuk menggantikan halaman saat ini dengan halaman baru. Halaman saat ini akan dihapus dari stack dan digantikan dengan halaman baru. Jadi, Halaman saat ini akan digantikan dengan HalamanTujuan, dan halaman baru akan menjadi halaman teratas di stack.
+
+
 
