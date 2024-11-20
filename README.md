@@ -181,5 +181,68 @@ Untuk mengatur theme bisa menggunakan Themdata dalam aplikasi, dapat mendefinisi
   stack dan kembali ke halaman sebelumnya.
 - **Navigator.pushReplacement():** Digunakan untuk menggantikan halaman saat ini dengan halaman baru. Halaman saat ini akan dihapus dari stack dan digantikan dengan halaman baru. Jadi, Halaman saat ini akan digantikan dengan HalamanTujuan, dan halaman baru akan menjadi halaman teratas di stack.
 
+____________________________________________________________________________________________________________________________________________
 
+# TUGAS 7
+
+
+**1. Jelaskan mengapa kita perlu membuat model untuk melakukan pengambilan ataupun pengiriman data JSON? Apakah akan terjadi error jika kita tidak membuat model terlebih dahulu?**
+
+Model penting dibuat agar data yang diambil atau dikirim memiliki struktur yang jelas dan rapi. Dengan model, pengolahan data menjadi lebih mudah karena data memiliki format yang sudah ditentukan. Selain itu, model membantu dalam memvalidasi data agar tidak ada data yang salah atau kurang. Jika model tidak dibuat, ada kemungkinan terjadinya kesalahan seperti data yang tidak sesuai format atau error saat proses parsing.
+
+**2. Jelaskan fungsi dari library http yang sudah kamu implementasikan pada tugas ini**
+
+Library http digunakan untuk menghubungkan aplikasi Flutter dengan server. Library ini memungkinkan kita untuk mengirim permintaan (request) seperti GET atau POST ke server dan menerima respons, biasanya dalam bentuk data JSON. Dengan library ini, aplikasi dapat mengambil data dari server atau mengirim data ke server, sehingga dapat menampilkan informasi yang diperbarui secara real-time.
+
+**3. Jelaskan fungsi dari CookieRequest dan jelaskan mengapa instance CookieRequest perlu untuk dibagikan ke semua komponen di aplikasi Flutter.**
+
+CookieRequest adalah objek yang digunakan untuk menyimpan dan mengelola cookie serta session. Fungsinya adalah memastikan bahwa aplikasi dapat menyimpan status login pengguna, sehingga pengguna tidak perlu login berulang kali saat berpindah-pindah halaman atau fitur di dalam aplikasi. Membagikan instance CookieRequest ke seluruh komponen aplikasi penting agar setiap bagian aplikasi bisa menggunakan data session yang sama, menjaga konsistensi autentikasi pengguna.
+
+**4. Jelaskan mekanisme pengiriman data mulai dari input hingga dapat ditampilkan pada Flutter.**
+
+Proses pengiriman data dapat diuraikan sebagai berikut:
+
+Input: Pengguna mengisi form di aplikasi Flutter.
+Pengiriman Data: Data tersebut dikirim ke server melalui request HTTP.
+Pemrosesan di Server: Server (misalnya, Django) menerima data, memprosesnya, dan mengirim respons dalam format JSON.
+Menampilkan Data di Flutter: Aplikasi Flutter menerima data JSON, menguraikannya ke dalam model, dan menampilkan hasilnya di antarmuka aplikasi.
+
+**5. jelaskan mekanisme autentikasi dari login, register, hingga logout. Mulai dari input data akun pada Flutter ke Django hingga selesainya proses autentikasi oleh Django dan tampilnya menu pada Flutter.**
+
+Login: Pengguna memasukkan username dan password di Flutter, kemudian data dikirim ke server. Server memeriksa data tersebut, dan jika valid, server mengirimkan cookie atau token ke Flutter untuk menyimpan session.
+Register: Pengguna mengisi form registrasi di Flutter, data dikirim ke server, dan server membuat akun baru jika data valid. Setelah itu, pengguna bisa langsung login.
+Logout: Aplikasi Flutter mengirim permintaan logout ke server, server menghapus session, dan pengguna diarahkan kembali ke halaman login.
+
+**6. Implementasi Checklist Secara Step-by-Step**
+1. **Membuat Model:**
+   - Tentukan jenis data yang perlu disimpan dan ditampilkan dalam aplikasi (misalnya, informasi menu produk).
+   - Buat kelas di Dart yang akan mewakili data tersebut, agar bisa diubah ke format JSON dan sebaliknya.
+   - Tambahkan metode untuk mengubah data JSON menjadi objek Dart (fromJson) dan mengubah objek Dart kembali menjadi JSON (toJson).
+
+3. **Mengimplementasikan Library http**:
+   - Tambahkan pustaka http dalam file pubspec.yaml agar aplikasi bisa mengirimkan permintaan HTTP.
+   - Buat fungsi di Flutter untuk mengirim permintaan ke server, misalnya GET untuk mengambil data dan POST untuk mengirimkan data.
+   - Tentukan URL dari server Django sebagai tujuan permintaan tersebut.
+
+4. **Menambahkan CookieRequest**:
+   - Implementasikan kelas CookieRequest untuk menangani pengelolaan cookie, yang digunakan untuk menjaga sesi pengguna agar tetap aktif.
+   - Gunakan CookieRequest dalam proses login dan logout untuk mengelola sesi dengan server Django.
+
+5. ***Mekanisme Pengiriman Data*:**
+   - Buat form di aplikasi Flutter untuk menerima input dari pengguna, seperti informasi produk.
+   - Lakukan validasi untuk memastikan data yang dimasukkan sudah benar sebelum dikirim ke server.
+   - Kirimkan data ke server menggunakan HTTP atau CookieRequest yang sudah dibuat sebelumnya.
+
+6. ***Autentikasi*:**
+   - Implementasikan logika autentikasi di server Django, seperti untuk proses login dan pendaftaran pengguna.
+   - Buat tampilan antarmuka di Flutter untuk login dan pendaftaran, yang dapat terhubung langsung dengan server Django.
+   - Gunakan cookie untuk menjaga sesi pengguna agar tetap terhubung selama aplikasi berjalan.
+
+7. ***Debugging dan Testing*:**
+   - Tes setiap langkah menggunakan data dummy.
+   - Verifikasi respons server untuk memastikan alur kerja.
+
+8. ***Integrasi dengan antar pengguna*:**
+   - Pastikan data yang diterima dari server dapat ditampilkan dengan benar di aplikasi Flutter.
+   - Tambahkan mekanisme penanganan kesalahan (error handling) yang baik, seperti memberi pesan yang jelas kepada pengguna jika terjadi kesalahan atau data yang dikirimkan tidak valid.
 
