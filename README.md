@@ -183,7 +183,7 @@ Untuk mengatur theme bisa menggunakan Themdata dalam aplikasi, dapat mendefinisi
 
 ____________________________________________________________________________________________________________________________________________
 
-# TUGAS 7
+# TUGAS 9
 
 
 **1. Jelaskan mengapa kita perlu membuat model untuk melakukan pengambilan ataupun pengiriman data JSON? Apakah akan terjadi error jika kita tidak membuat model terlebih dahulu?**
