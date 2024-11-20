@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:zyramarket/screens/menu.dart';
+import 'package:pbp_django_auth/pbp_django_auth.dart';
+import 'package:provider/provider.dart';
+import 'package:zyramarket/screens/login.dart';
 
 void main() {
   runApp(const MyApp());
@@ -8,19 +10,28 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primaryColor: Colors.blueAccent.shade700,
-        colorScheme: ColorScheme.fromSwatch().copyWith(
-           primary: Colors.blueAccent.shade700,
-          secondary:Colors.blue.shade50),
-        useMaterial3: true,
+    return Provider(
+      create: (_) {
+        CookieRequest request = CookieRequest();
+        return request;
+      },
+      child: MaterialApp(
+        title: 'Zyramarket',
+        theme: ThemeData(
+          useMaterial3: true,
+          appBarTheme: const AppBarTheme(
+            backgroundColor: Colors.blueAccent, // Warna header
+            foregroundColor: Colors.white, // Warna teks header
+          ),
+          scaffoldBackgroundColor: Colors.blue.shade50, // Warna background
+          colorScheme: ColorScheme.fromSwatch(
+            primarySwatch: Colors.blue,
+          ).copyWith(secondary: Colors.lightBlue[400]),
+        ),
+        home: const LoginPage(),
       ),
-      home: MyHomePage(),
     );
   }
 }
